@@ -1,0 +1,17 @@
+<h1>Animals</h1>
+
+<%if @categories.any?%>
+	<%@categories.each do |category|%>
+	<ul>
+		<%if category.id.even?%>
+			<li><%=link_to "#{category.name}", category%></li>
+		<%else%>
+			<li><%=button_to "#{category.name}", category, method: 'get'%>
+		<%end%>
+		<%=link_to 'delete', category, :method => :delete%>
+		<%= button_to 'delete', category, :method => "delete"%>
+	</ul>
+	<%end%>
+
+<%end%>
+<%=link_to "create a category", new_category_path%>

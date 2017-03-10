@@ -1,0 +1,18 @@
+<%=form_tag category_animal_path(@category, @animal), method: "post"%>
+<%=label_tag :name%>
+<%=text_field_tag :name%>
+<%=label_tag :specie%>
+<%=text_field_tag :specie%>
+<%=submit_tag value="create"%>
+<br>
+<br>
+<br>
+<%=form_for @animal, url: category_animal_path(@category, @animal) do |f|%>
+	<%=f.label :name%>
+	<%=f.text_field :name%>
+	<%=f.label :specie%>
+	<%=f.text_field :specie%>
+	<%=f.submit value: "submitit"%>
+<%end%>
+	
+	

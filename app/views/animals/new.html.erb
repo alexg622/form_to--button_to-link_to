@@ -1,0 +1,8 @@
+<%=form_for @animal, url: category_animals_path(@category) do |f|%>
+	<%=f.label :name%>
+	<%=f.text_field :name, placeholder: "name"%>
+	<%=f.label :specie%>
+	<%=f.password_field :specie, placeholder: "specie"%>
+	<%=f.hidden_field :category_id, value: @category.id%>
+	<%=f.submit "create animal"%>
+<%end%>

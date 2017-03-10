@@ -1,0 +1,13 @@
+<h1><%=@category.name%></h1>
+<%if @animals.any?%>
+	<%@animals.each do |animal|%>
+		<h4><%=animal.name%>, <%=animal.specie%></h4>
+		<ul>
+			<li><%=link_to "edit", edit_category_animal_path(@category, animal)%></li>
+			<li><%=form_for animal, url: category_animal_path(@category, animal), method: 'delete' do |f|%>
+					<%=f.submit value: "delete"%>
+				<%end%></li>
+		</ul>
+	<%end%>
+<%end%>
+<%=link_to "create an animal", new_category_animal_path(@category)%>
